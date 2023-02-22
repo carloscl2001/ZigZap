@@ -68,9 +68,9 @@ public class movimiento : MonoBehaviour
         Destroy(suelo.gameObject);
         float ran = Random.Range(0.0f, 1.0f);
         if(ran > 0.5f)
-            valX += 12.0f;
+            valX += 6.0f;
         else
-            valZ += 12.0f;
+            valZ += 6.0f;
         GameObject elnuevosuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
     }
 }
