@@ -708,7 +708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EMPIEZA LA CUENTA ATRAS
+  m_Text: EMPIEZA EL JUEGO
 --- !u!222 &1344627801
 CanvasRenderer:
   m_ObjectHideFlags: 0

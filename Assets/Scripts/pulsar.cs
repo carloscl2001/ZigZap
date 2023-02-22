@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class pulsar : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class pulsar : MonoBehaviour
             switch (numero){
                 case 0:
                     Debug.Log("Has terminado | Saltando de escena....");
+                    SceneManager.LoadScene("escena_2", LoadSceneMode.Single);
                     break;
                 case 1:
                     image.sprite = spNumero[2];
