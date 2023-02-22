@@ -55,24 +55,22 @@ public class movimiento : MonoBehaviour
 
     void OnCollisionExit(Collision other){
         if(other.transform.tag == "suelo"){
-            numSuelos++;
-            texto.text = "Puntuacion: "  + numSuelos;
             StartCoroutine(CrearSuelo(other));
         }
     }
 
     IEnumerator CrearSuelo(Collision suelo){
         Debug.Log("Suelo");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         suelo.rigidbody.isKinematic = false;
         suelo.rigidbody.useGravity = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(suelo.gameObject);
         float ran = Random.Range(0.0f, 1.0f);
         if(ran > 0.5f)
-            valX += 6.0f;
+            valX += 12.0f;
         else
-            valZ += 6.0f;
+            valZ += 12.0f;
         GameObject elnuevosuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
     }
 }
