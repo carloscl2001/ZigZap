@@ -15,26 +15,24 @@ public class movimiento : MonoBehaviour
     private float valZ;
     private Rigidbody rb;
     private Vector3 dirreccionActual;
-    private int contador = 0;
+    private int contador;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         offset = camara.transform.position;
         valX = 0.0f;
         valZ = 0.0f;
+        contador = 0;
         rb = GetComponent<Rigidbody>();
         dirreccionActual = Vector3.forward;
         SueloInicial();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         camara.transform.position = this.transform.position + offset;
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
+        if (Input.GetKeyUp(KeyCode.Space)){
             if(dirreccionActual == Vector3.forward)
                 dirreccionActual = Vector3.right;
             else

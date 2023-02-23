@@ -546,7 +546,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Suelos: 0'
+  m_Text: 'Suelos: 10'
 --- !u!222 &1557222608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
   camara: {fileID: 786837568}
   velocidad: 2
   prefabSuelo: {fileID: 956378227}
-  texto: {fileID: 0}
+  texto: {fileID: 1557222607}
 --- !u!1001 &2302835020518193747
 PrefabInstance:
   m_ObjectHideFlags: 0
