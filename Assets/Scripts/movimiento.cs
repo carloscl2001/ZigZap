@@ -15,7 +15,7 @@ public class movimiento : MonoBehaviour
     private float valZ;
     private Rigidbody rb;
     private Vector3 dirreccionActual;
-    private int numSuelos;
+    private int contador = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,6 @@ public class movimiento : MonoBehaviour
         valZ = 0.0f;
         rb = GetComponent<Rigidbody>();
         dirreccionActual = Vector3.forward;
-        numSuelos = 0;
         SueloInicial();
     }
 
@@ -55,6 +54,8 @@ public class movimiento : MonoBehaviour
 
     void OnCollisionExit(Collision other){
         if(other.transform.tag == "suelo"){
+            contador++;
+            texto.text = "Suelos: " + contador;
             StartCoroutine(CrearSuelo(other));
         }
     }
