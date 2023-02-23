@@ -8,14 +8,13 @@ public class suelo : MonoBehaviour
     // public Camera camara;
     // public int velocidad;
     public GameObject prefabSuelo;
-    // public Text texto;
 
     private Vector3 offset;
     private static float valX;
     private static float valZ;
     private Rigidbody rb;
     private Vector3 dirreccionActual;
-    private static int contador = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +32,6 @@ public class suelo : MonoBehaviour
     void OnCollisionExit(Collision other){
         // Debug.Log("toca suelo");
         if(other.transform.tag == "jugador" /* && other.GetComponent<Collision>() != null */){
-            contador++;
-            Debug.Log("Suelos: " + contador);
-            // texto.text = "Suelos: " + contador;
             // Debug.Log(other.transform.position.x + " " + other.transform.position.z + "antes de crear");
             StartCoroutine(CrearSuelo(this.gameObject));
         }

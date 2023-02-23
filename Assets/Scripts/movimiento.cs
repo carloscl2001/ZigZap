@@ -52,15 +52,15 @@ public class movimiento : MonoBehaviour
         }
     }
 
-/*     void OnCollisionExit(Collision other){
+     void OnCollisionExit(Collision other){
         // Debug.Log("toca suelo");
         if(other.transform.tag == "Suelo"){
             contador++;
             texto.text = "Suelos: " + contador;
-            // Debug.Log(other.transform.position.x + " " + other.transform.position.z + "antes de crear");
-            StartCoroutine(CrearSuelo(other));
         }
     }
+
+    /*
 
     IEnumerator CrearSuelo(Collision suelo){
         Debug.Log(suelo.transform.position.x + " " + suelo.transform.position.z + " Suelo");

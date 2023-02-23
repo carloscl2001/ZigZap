@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2302835021206115878, guid: c82cfe4ee1fca1c41bfb6ec6aa72fbfa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87718d0a0d596b54f84ccbb8fa572458, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c82cfe4ee1fca1c41bfb6ec6aa72fbfa, type: 3}
 --- !u!1 &390648143
@@ -357,14 +361,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786837566}
-  m_LocalRotation: {x: 0.0026889446, y: 0.014096598, z: 0.000034926463, w: -0.99989706}
-  m_LocalPosition: {x: 0.9118029, y: 3.2711296, z: -13.4780445}
+  m_LocalRotation: {x: -0.18958403, y: -0.39568758, z: 0.08384302, w: -0.8946841}
+  m_LocalPosition: {x: -13.169903, y: 9.490665, z: -12.859022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.308, y: 21.086, z: 0}
 --- !u!1 &1113573316
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +602,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Suelos: 10'
+  m_Text: 'Suelos: 0
+
+'
 --- !u!222 &1557222608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -661,7 +667,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e98a7a4c95512e140b5e0f8cbdff1cb1, type: 2}
+  - {fileID: 2100000, guid: 039ec3bfb17d9a346b46c1677303ca8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
