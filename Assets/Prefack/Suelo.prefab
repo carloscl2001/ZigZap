@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2302835021206115876}
   - component: {fileID: 2302835021206115877}
   - component: {fileID: 2302835021206115878}
+  - component: {fileID: 6034399869630907791}
   - component: {fileID: 2302835021206115879}
   - component: {fileID: 2302835021206115883}
   m_Layer: 0
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cef61516f31e67447b5455d4d293ba79, type: 2}
+  - {fileID: 2100000, guid: 0313809d5da972844ace739a5afb0875, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,6 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6034399869630907791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302835021206115872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a50f863e8ac8ad45b490c666ea59d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabSuelo: {fileID: 2302835021206115872}
 --- !u!65 &2302835021206115879
 BoxCollider:
   m_ObjectHideFlags: 0
