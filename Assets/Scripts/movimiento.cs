@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class movimiento : MonoBehaviour
 {
@@ -58,25 +59,16 @@ public class movimiento : MonoBehaviour
             contador++;
             texto.text = "Suelos: " + contador;
         }
+
+        if(other.transform.tag == "Suma" ){
+            velocidad += 10;
+        }
+
+        if(other.transform.tag == "Resta" ){
+            velocidad -= 5;
+        }
+        
     }
 
-    /*
-
-    IEnumerator CrearSuelo(Collision suelo){
-        Debug.Log(suelo.transform.position.x + " " + suelo.transform.position.z + " Suelo");
-        // yield return new WaitWhile(() => toca);
-        yield return new WaitForSeconds(0f);
-        Debug.Log(suelo.transform.position.x + " " + suelo.transform.position.z + " destruye suelo");
-        suelo.rigidbody.isKinematic = false;
-        suelo.rigidbody.useGravity = true;
-        // yield return new WaitForSeconds(f);
-        Destroy(suelo.gameObject);
-        float ran = Random.Range(0.0f, 1.0f);
-        if(ran > 0.5f)
-            valX += 6.0f;
-        else
-            valZ += 6.0f;
-        // Debug.Log(suelo.transform.position.x + " " + suelo.transform.position.z + "antes de instanciar");
-        GameObject elnuevosuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
-    }*/
+    
 } 

@@ -31,7 +31,7 @@ public class suelo : MonoBehaviour
 
     void OnCollisionExit(Collision other){
         // Debug.Log("toca suelo");
-        if(other.transform.tag == "jugador" /* && other.GetComponent<Collision>() != null */){
+        if(other.transform.tag == "Jugador" /* && other.GetComponent<Collision>() != null */){
             // Debug.Log(other.transform.position.x + " " + other.transform.position.z + "antes de crear");
             StartCoroutine(CrearSuelo(this.gameObject));
         }
