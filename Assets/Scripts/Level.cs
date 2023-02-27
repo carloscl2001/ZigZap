@@ -22,9 +22,6 @@ public class Level : MonoBehaviour
         bool level_3 = false;
         if(other.transform.tag == "Jugador" && level_3 == false){
             SceneManager.LoadScene("escena_3", LoadSceneMode.Single);
-            level_3 = true;
-        }else if(other.transform.tag == "Jugador" && level_3 == true){
-            SceneManager.LoadScene("escena_4", LoadSceneMode.Single);
         }
     }
 }
