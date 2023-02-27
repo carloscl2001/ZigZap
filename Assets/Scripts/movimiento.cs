@@ -61,7 +61,7 @@ public class movimiento : MonoBehaviour
         }
 
         if(other.transform.tag == "Suma" ){
-            velocidad += 10;
+            velocidad += 8;
         }
 
         if(other.transform.tag == "Resta" ){
