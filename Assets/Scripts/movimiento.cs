@@ -65,7 +65,7 @@ public class movimiento : MonoBehaviour
         }
 
         if(other.transform.tag == "Resta" ){
-            velocidad -= 5;
+            velocidad -= 2;
         }
         
     }
