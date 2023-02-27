@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Level : MonoBehaviour
+public class Level1 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,8 @@ public class Level : MonoBehaviour
     }
 
     void OnCollisionExit(Collision other){
-        bool level_3 = false;
-        if(other.transform.tag == "Jugador" && level_3 == false){
-            SceneManager.LoadScene("escena_3", LoadSceneMode.Single);
-            level_3 = true;
-        }else if(other.transform.tag == "Jugador" && level_3 == true){
+        
+        if(other.transform.tag == "Jugador"){
             SceneManager.LoadScene("escena_4", LoadSceneMode.Single);
         }
     }
