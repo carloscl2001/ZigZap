@@ -10,6 +10,7 @@ public class movimiento : MonoBehaviour
     public int velocidad;
     public GameObject prefabSuelo;
     public Text texto;
+    public Text texto_velo;
 
     private Vector3 offset;
     private float valX;
@@ -62,10 +63,12 @@ public class movimiento : MonoBehaviour
 
         if(other.transform.tag == "Suma" ){
             velocidad += 8;
+            texto_velo.text = "Velocidad: " + velocidad;
         }
 
         if(other.transform.tag == "Resta" ){
             velocidad -= 2;
+            texto_velo.text = "Velocidad: " + velocidad;
         }
         
     }
