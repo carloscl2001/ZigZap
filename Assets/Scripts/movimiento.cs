@@ -32,13 +32,24 @@ public class movimiento : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+        transform.Rotate(new Vector3(180, 0, 0) * Time.deltaTime, Space.Self);
+            // if(dirreccionActual == Vector3.forward){
+            //     transform.Rotate(new Vector3(180, 0, 0) * Time.deltaTime);
+            // } 
+            // else{ 
+            //     transform.Rotate(new Vector3(0, 0, -180) * Time.deltaTime);
+            // }
         camara.transform.position = this.transform.position + offset;
         // Debug.Log("antes de girar");
         if (Input.GetKeyUp(KeyCode.Space)){
-            if(dirreccionActual == Vector3.forward)
+            if(dirreccionActual == Vector3.forward){
                 dirreccionActual = Vector3.right;
-            else
-                dirreccionActual = Vector3.forward;   
+                transform.rotation = Quaternion.Euler(0, 90, 0);
+            } 
+            else{
+                dirreccionActual = Vector3.forward;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
         float tiempo = velocidad * Time.deltaTime;
         // Debug.Log("despues de girar");

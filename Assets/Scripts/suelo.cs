@@ -8,6 +8,8 @@ public class suelo : MonoBehaviour
     // public Camera camara;
     // public int velocidad;
     public GameObject prefabSuelo;
+    public GameObject particula;
+
 
     private Vector3 offset;
     private static float valX;
@@ -47,9 +49,18 @@ public class suelo : MonoBehaviour
             valX += 6.0f;
         else
             valZ += 6.0f;
+        
         GameObject elnuevosuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
+        for(int n = 0; n < 6; n++){    
+            suelo.transform.Rotate(new Vector3(0, 2, 0) * 1);
+            yield return new WaitForSeconds(0.05f);
+            suelo.transform.Rotate(new Vector3(0, -2, 0) * 1);
+            yield return new WaitForSeconds(0.05f);
+        }
+        GameObject particulanueva = Instantiate(particula, new Vector3(this.transform.position.x, 0.0f, this.transform.position.z), particula.transform.rotation) as GameObject;
         suelo.GetComponent<Rigidbody>().isKinematic = false;
         suelo.GetComponent<Rigidbody>().useGravity = true;
+        yield return new WaitForSeconds(0.5f);
         // yield return new WaitForSeconds(f);
         Destroy(suelo);
         // Debug.Log(suelo.transform.position.x + " " + suelo.transform.position.z + "antes de instanciar");
