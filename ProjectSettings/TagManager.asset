@@ -9,6 +9,7 @@ TagManager:
   - Suma
   - Jugador
   - Level
+  - Obstaculo
   layers:
   - Default
   - TransparentFX

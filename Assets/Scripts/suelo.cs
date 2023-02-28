@@ -12,6 +12,9 @@ public class suelo : MonoBehaviour
     public GameObject meta;
     public GameObject suma;
     public GameObject resta;
+    public GameObject Obstaculo1;
+    public GameObject Obstaculo2;
+    public GameObject Obstaculo3;
 
 
     private Vector3 offset;
@@ -46,7 +49,7 @@ public class suelo : MonoBehaviour
     IEnumerator CrearSuelo(GameObject suelo){
         contador++;
 
-        if(contador <= 5){
+        if(contador <= 17){
             float ran = Random.Range(0.0f, 1.0f);
             if(ran > 0.5f)
                 valX += 6.0f;
@@ -59,9 +62,18 @@ public class suelo : MonoBehaviour
             else if(ran > 0.85f){
                 Instantiate(resta, new Vector3(valX + Random.Range(-3.0f, 3.0f), 2f, valZ + Random.Range(-3.0f, 3.0f)), resta.transform.rotation);
             }
+            else if(ran > 0.5f && ran < 0.56f){
+                Instantiate(Obstaculo1, new Vector3(valX - 1.16f, 0.5f + Obstaculo1.transform.position.y, valZ + 0.36f), Obstaculo1.transform.rotation);
+            }
+            else if(ran > 0.56f && ran < 0.62f){
+                Instantiate(Obstaculo2, new Vector3(valX + 2.09f, -1.5f + Obstaculo2.transform.position.y, valZ - 1.47f), Obstaculo2.transform.rotation);
+            }
+            else if(ran > 0.62f && ran < 0.68f){
+                Instantiate(Obstaculo3, new Vector3(valX + Obstaculo3.transform.position.x, 1f + Obstaculo3.transform.position.y, valZ + Obstaculo3.transform.position.z), Obstaculo3.transform.rotation);
+            }
             GameObject elnuevosuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
         }
-        if(contador == 5){
+        if(contador == 17){
             GameObject final = Instantiate(meta, new Vector3(valX + meta.transform.position.x, 0.0f + meta.transform.position.y, valZ + meta.transform.position.z), meta.transform.rotation) as GameObject;
         }
 

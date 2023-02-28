@@ -15,7 +15,7 @@ public class movimiento : MonoBehaviour
     public Text texto_velo;
 
     private Vector3 offset;
-    private static int nivel = 1;
+    private static int nivel = 2;
     private float valX;
     private float valZ;
     private Rigidbody rb;
@@ -53,6 +53,10 @@ public class movimiento : MonoBehaviour
         // Debug.Log("despues de girar");
         rb.transform.Translate(dirreccionActual * tiempo, Space.World);
         Vector3 pos = this.transform.position;
+
+        if(transform.position.y < -5 || velocidad <= 0){
+            SceneManager.LoadScene("escena_" + nivel, LoadSceneMode.Single);
+        }
         // this.transform.position = new Vector3(pos.x, 1, pos.z);
     }
 
@@ -69,7 +73,7 @@ public class movimiento : MonoBehaviour
             SceneManager.LoadScene("escena_" + nivel, LoadSceneMode.Single);
         }
         if(other.transform.tag == "Suma" ){
-            velocidad += 8;
+            velocidad += 4;
             texto_velo.text = "Velocidad: " + velocidad;
             Instantiate(particulaSum, new Vector3(this.transform.position.x, 1f, this.transform.position.z), particulaSum.transform.rotation);
             Destroy(other.gameObject);
@@ -79,6 +83,9 @@ public class movimiento : MonoBehaviour
             texto_velo.text = "Velocidad: " + velocidad;
             Instantiate(particulaRes, new Vector3(this.transform.position.x, 2f, this.transform.position.z), particulaRes.transform.rotation);
             Destroy(other.gameObject);
+        }
+        if(other.transform.tag == "Obstaculo"){
+            SceneManager.LoadScene("escena_" + nivel, LoadSceneMode.Single);
         }
     }
 
