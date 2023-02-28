@@ -102,6 +102,8 @@ MonoBehaviour:
   prefabSuelo: {fileID: 2302835021206115872}
   particula: {fileID: 7074083783133001632, guid: 086c5e81ca9d96842896f0deeafa763c, type: 3}
   meta: {fileID: 6429811904252857979, guid: 6c4f4d0ea3aacf34caf92cbfa8b8b5d1, type: 3}
+  suma: {fileID: 2122339653926223421, guid: f276f2222f14f0d4996323fc0415b86c, type: 3}
+  resta: {fileID: 2843202454463538760, guid: 0c434d59da1079247989ed60a82fb545, type: 3}
 --- !u!65 &2302835021206115879
 BoxCollider:
   m_ObjectHideFlags: 0

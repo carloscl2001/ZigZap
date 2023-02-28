@@ -9,6 +9,8 @@ public class movimiento : MonoBehaviour
     public Camera camara;
     public int velocidad;
     public GameObject prefabSuelo;
+    public GameObject particulaSum;
+    public GameObject particulaRes;
     public Text texto;
     public Text texto_velo;
 
@@ -28,6 +30,7 @@ public class movimiento : MonoBehaviour
         contador = 0;
         rb = GetComponent<Rigidbody>();
         dirreccionActual = Vector3.forward;
+        suelo.contador = 0;
         SueloInicial();
     }
 
@@ -61,10 +64,21 @@ public class movimiento : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-            Debug.Log("cambio de nivel");
         if(other.transform.tag == "Level"){
             nivel++;
             SceneManager.LoadScene("escena_" + nivel, LoadSceneMode.Single);
+        }
+        if(other.transform.tag == "Suma" ){
+            velocidad += 8;
+            texto_velo.text = "Velocidad: " + velocidad;
+            Instantiate(particulaSum, new Vector3(this.transform.position.x, 1f, this.transform.position.z), particulaSum.transform.rotation);
+            Destroy(other.gameObject);
+        }
+        if(other.transform.tag == "Resta" ){
+            velocidad -= 2;
+            texto_velo.text = "Velocidad: " + velocidad;
+            Instantiate(particulaRes, new Vector3(this.transform.position.x, 2f, this.transform.position.z), particulaRes.transform.rotation);
+            Destroy(other.gameObject);
         }
     }
 
@@ -74,17 +88,6 @@ public class movimiento : MonoBehaviour
             contador++;
             texto.text = "Suelos: " + contador;
         }
-
-        if(other.transform.tag == "Suma" ){
-            velocidad += 8;
-            texto_velo.text = "Velocidad: " + velocidad;
-        }
-
-        if(other.transform.tag == "Resta" ){
-            velocidad -= 2;
-            texto_velo.text = "Velocidad: " + velocidad;
-        }
-        
     }
 
     

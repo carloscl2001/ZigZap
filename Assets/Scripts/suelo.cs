@@ -10,6 +10,8 @@ public class suelo : MonoBehaviour
     public GameObject prefabSuelo;
     public GameObject particula;
     public GameObject meta;
+    public GameObject suma;
+    public GameObject resta;
 
 
     private Vector3 offset;
@@ -50,6 +52,13 @@ public class suelo : MonoBehaviour
                 valX += 6.0f;
             else
                 valZ += 6.0f;
+
+            if(ran < 0.08f){
+                Instantiate(suma, new Vector3(valX + Random.Range(-3.0f, 3.0f), 2f, valZ + Random.Range(-3.0f, 3.0f)), suma.transform.rotation);
+            }
+            else if(ran > 0.85f){
+                Instantiate(resta, new Vector3(valX + Random.Range(-3.0f, 3.0f), 2f, valZ + Random.Range(-3.0f, 3.0f)), resta.transform.rotation);
+            }
             GameObject elnuevosuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
         }
         if(contador == 5){
@@ -69,7 +78,6 @@ public class suelo : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         // yield return new WaitForSeconds(f);
         Destroy(suelo);
-        Destroy(particulanueva);
         // Debug.Log(suelo.transform.position.x + " " + suelo.transform.position.z + "antes de instanciar");
     }
 
