@@ -18,7 +18,7 @@ public class Level1 : MonoBehaviour
         
     }
 
-    void OnCollisionExit(Collision other){
+    void OnTrigger(Collision other){
         if(other.transform.tag == "Jugador"){
             SceneManager.LoadScene("escena_4", LoadSceneMode.Single);
         }

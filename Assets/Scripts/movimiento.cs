@@ -13,6 +13,7 @@ public class movimiento : MonoBehaviour
     public Text texto_velo;
 
     private Vector3 offset;
+    private static int nivel = 1;
     private float valX;
     private float valZ;
     private Rigidbody rb;
@@ -33,12 +34,6 @@ public class movimiento : MonoBehaviour
     // Update is called once per frame
     void Update(){
         transform.Rotate(new Vector3(180, 0, 0) * Time.deltaTime, Space.Self);
-            // if(dirreccionActual == Vector3.forward){
-            //     transform.Rotate(new Vector3(180, 0, 0) * Time.deltaTime);
-            // } 
-            // else{ 
-            //     transform.Rotate(new Vector3(0, 0, -180) * Time.deltaTime);
-            // }
         camara.transform.position = this.transform.position + offset;
         // Debug.Log("antes de girar");
         if (Input.GetKeyUp(KeyCode.Space)){
@@ -62,6 +57,14 @@ public class movimiento : MonoBehaviour
         for(int n = 0; n < 3; n++){
             valZ += 6.0f;
             GameObject elsuelo = Instantiate(prefabSuelo, new Vector3(valX, 0.0f, valZ), Quaternion.identity) as GameObject;
+        }
+    }
+
+    void OnTriggerEnter(Collider other){
+            Debug.Log("cambio de nivel");
+        if(other.transform.tag == "Level"){
+            nivel++;
+            SceneManager.LoadScene("escena_" + nivel, LoadSceneMode.Single);
         }
     }
 
